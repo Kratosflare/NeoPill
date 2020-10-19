@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
 {
    float horizontalInput;
    float verticalInput;
-   // private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
    float speed = 5.0f;
+    float force = 4;
+    bool isOnGround;
     void Start()
     {
-       // rigidbody = GetComponent<Rigidbody>();   
+       rigidbody = GetComponent<Rigidbody>();   
     }
 
     // Update is called once per frame
@@ -23,7 +25,17 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
 
 
-        // stop movement when at the edge of the plane
+        if(Input.GetKeyDown(KeyCode.Space)&& isOnGround)
+        {
+            rigidbody.AddForce(Vector3.up * force,ForceMode.Impulse);
+            isOnGround = false;
+        }
 
+
+        
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        isOnGround = true;
     }
 }
