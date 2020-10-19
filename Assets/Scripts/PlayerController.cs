@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
    float speed = 5.0f;
     float force = 4;
     bool isOnGround;
+    float deadZone = 0;
+    Vector3 startPosition;
     void Start()
     {
        rigidbody = GetComponent<Rigidbody>();   
@@ -18,6 +20,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        startPosition = new Vector3(15,2);
+
+
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
@@ -30,9 +35,10 @@ public class PlayerController : MonoBehaviour
             rigidbody.AddForce(Vector3.up * force,ForceMode.Impulse);
             isOnGround = false;
         }
-
-
-        
+        if(transform.position.y < deadZone)
+        {
+            transform.position = startPosition;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
