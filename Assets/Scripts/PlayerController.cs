@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject bullet;
+
    float horizontalInput;
    float verticalInput;
     private new Rigidbody rigidbody;
    float speed = 5.0f;
-    float force = 4;
+    float force = 6;
     bool isOnGround;
     float deadZone = 0;
     Vector3 startPosition;
+    Vector3 playerPosition;
     void Start()
     {
        rigidbody = GetComponent<Rigidbody>();   
@@ -21,6 +25,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         startPosition = new Vector3(15,2);
+        playerPosition = new Vector3(transform.position.x, transform.position.y);
+
 
 
         horizontalInput = Input.GetAxis("Horizontal");
@@ -39,9 +45,19 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = startPosition;
         }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Shoot();
+        }
+
     }
     private void OnCollisionEnter(Collision collision)
     {
         isOnGround = true;
+    }
+    private void Shoot()
+    {
+        Instantiate(bullet, transform.position, transform.rotation);
+        Destroy(bullet, 3);
     }
 }
