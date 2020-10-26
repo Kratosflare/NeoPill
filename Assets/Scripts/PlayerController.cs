@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
    float horizontalInput;
    float verticalInput;
-    private new Rigidbody rigidbody;
+    new Rigidbody rigidbody;
    float speed = 5.0f;
     float force = 6;
     bool isOnGround;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     Vector3 playerPosition;
     void Start()
     {
-       rigidbody = GetComponent<Rigidbody>();   
+       rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -58,6 +58,6 @@ public class PlayerController : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bullet, transform.position, transform.rotation);
-        Destroy(bullet, 3);
+       
     }
 }
