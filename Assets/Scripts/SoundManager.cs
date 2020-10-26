@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public int sampleDataLength = 1024;
     private float currentUpdateTime = 0f;
     public float clipLoudness;
+    private float [] clipSampleData;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
