@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     Vector3 startPosition;
     Vector3 playerPosition;
     Vector2 lookDirection;
+    GameObject Checkpoint;
     void Start()
     {
        rigidbody = GetComponent<Rigidbody>();
@@ -31,11 +33,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Vector3 rigidPosition = rigidbody.position;
         startPosition = new Vector3(15,2);
         playerPosition = new Vector3(transform.position.x, transform.position.y);
         Vector3 move = new Vector3(horizontalInput, verticalInput);
-
 
         //Player Movement
 

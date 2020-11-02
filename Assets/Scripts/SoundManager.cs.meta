@@ -3,7 +3,20 @@ guid: b340bd7f1634c4a4284f91da3cc2cef8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - audioClip: {fileID: 8300000, guid: 78c9da3fb4d441545bef049748eaa025, type: 3}
+  - beats: {fileID: 8620326910754316566, guid: da576aaa1931564438c74f741f69e5f1, type: 3}
+  - beats1: {fileID: 8620326910754316566, guid: da576aaa1931564438c74f741f69e5f1,
+      type: 3}
+  - beats2: {fileID: 8620326910754316566, guid: da576aaa1931564438c74f741f69e5f1,
+      type: 3}
+  - beats3: {fileID: 8620326910754316566, guid: da576aaa1931564438c74f741f69e5f1,
+      type: 3}
+  - beats4: {fileID: 8620326910754316566, guid: da576aaa1931564438c74f741f69e5f1,
+      type: 3}
+  - beats5: {fileID: 8620326910754316566, guid: da576aaa1931564438c74f741f69e5f1,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
