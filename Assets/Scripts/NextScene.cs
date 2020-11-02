@@ -22,4 +22,19 @@ public class NextScene : MonoBehaviour
             SceneManager.LoadScene("Menu");
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            Debug.Log("I'm here!");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("Level2");
+        }
+    }
 }

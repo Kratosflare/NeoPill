@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8620326910754316561}
   - component: {fileID: 8620326910754316560}
   - component: {fileID: 8620326910754316567}
+  - component: {fileID: -1005390686915974077}
   m_Layer: 0
   m_Name: Beats
-  m_TagString: Untagged
+  m_TagString: Beat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,8 +89,21 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8620326910754316566}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1005390686915974077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8620326910754316566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a8f751b6ed61744b55e60a48192bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blasted: {fileID: 2100000, guid: 6bb0e9908cd72314f9a85a481417daad, type: 2}
