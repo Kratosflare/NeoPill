@@ -21,6 +21,7 @@ public class SoundManager : MonoBehaviour
     public float sizeFactor = 1;
     public float minSize = 0;
     public float maxSize = 50;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,8 +36,31 @@ public class SoundManager : MonoBehaviour
         clipSampleData = new float[sampleDataLength];
 
     }
+
+
+
+    /*
+            // If these were all in an array rather than individually you 
+            // could this
+            ;
+            foreach (GameObject go in allBeats)
+                go.transform.localScale = clipVec;
+*/
     private void Update()
     {
+        GameObject[] allBeats = { beats, beats1, beats2, beats3, beats4, beats5 };
+
+        Vector3 clipVec = new Vector3(clipLoudness, clipLoudness, clipLoudness);
+
+        foreach (GameObject go in allBeats)
+            go.transform.localScale = clipVec;
+
+        PlayMusic();
+
+
+
+
+
         currentUpdateTime += Time.deltaTime;
         if (currentUpdateTime>= updateStep)
         {
@@ -51,13 +75,6 @@ public class SoundManager : MonoBehaviour
 
             clipLoudness *= sizeFactor;
             clipLoudness = Mathf.Clamp(clipLoudness, minSize, maxSize);
-
-            beats.transform.localScale = new Vector3(clipLoudness,clipLoudness,clipLoudness);
-            beats1.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
-            beats2.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
-            beats3.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
-            beats4.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
-            beats5.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
         }
     }
 }
